@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Character Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
+  <link href="css/grid.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script defer src="js/main.js"></script>
+<script   src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+
+
+</head>
+<body>
+  <div class="header">
+    <div class="logo-section">
+      <h1>Star Wars Wiki</h1>
+    </div>
+    <div class="search-section">
+      <input type="text" placeholder="Search characters, planets, etc." id="search-bar" />
+    </div>
+  </div>
+  
+  <div class="full-width-grid-con">
+    <div class="col-span-full m-col-span-full l-col-span-full xl-col-span-full logo">
+      <img src="images/4cover.jpg" alt="Star Wars Logo" class="responsive-logo">
+    </div>
+  </div>
+
+  <div id="spinning-indicator" class="spinning-indicator">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="#F3C13C" stroke="#F3C13C" stroke-width="2" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin="0"></animate></circle><circle fill="#F3C13C" stroke="#F3C13C" stroke-width="2" opacity=".8" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin="0.05"></animate></circle><circle fill="#F3C13C" stroke="#F3C13C" stroke-width="2" opacity=".6" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".1"></animate></circle><circle fill="#F3C13C" stroke="#F3C13C" stroke-width="2" opacity=".4" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".15"></animate></circle><circle fill="#F3C13C" stroke="#F3C13C" stroke-width="2" opacity=".2" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".2"></animate></circle></svg>
+  </div>
+
+  <div class="full-width-grid-con">
+    <div class="col-span-full m-col-span-full l-col-span-full xl-col-span-full category-box-container">
+      <section class="category-box" id="category-box">
+        <div class="category-box-content">
+          <ul id="category-list">
+            <li><a href="#" data-category="people"><span class="category-box-text"><img src="images/icons8-man-96.png" alt="People Icon" class="category-icon">People</span></a></li>
+            <li><a href="#" data-category="planets"><span class="category-box-text"><img src="images/icons8-planet-96 (1).png" alt="Planets Icon" class="category-icon">Planets</span></a></li>
+            <li><a href="#" data-category="films"><span class="category-box-text"><img src="images/icons8-movie-ticket-96.png" alt="Films Icon" class="category-icon">Films</span></a></li>
+            <li><a href="#" data-category="species"><span class="category-box-text"><img src="images/icons8-baby-yoda-96.png" alt="Species Icon" class="category-icon">Species</span></a></li>
+            <li><a href="#" data-category="vehicles"><span class="category-box-text"><img src="images/icons8-race-car-96.png" alt="Vehicles Icon" class="category-icon">Vehicles</span></a></li>
+            <li><a href="#" data-category="starships"><span class="category-box-text"><img src="images/icons8-star-wars-naboo-ship-96 (1).png" alt="Starships Icon" class="category-icon">Starships</span></a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <div class="col-span-full m-col-span-full l-col-span-full xl-col-span-full main-content">
+      <section class="item-box" id="item-box">
+        <h2>Items</h2>
+        <div id="item-con">
+
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="full-width-grid-con">
+    <div class="col-span-full m-col-span-full l-col-span-full xl-col-span-full logo">
+      <div id="showinfo-con"></div> 
+    </div>
+  </div>
+
+
+  <template id="character-card-template">
+    <div class="character-card">
+      <img src="" alt="Character Image" class="character-image">
+      <div class="name-container" style="background-color: #fbff00;">
+        <p class="character-name"></p>
+      </div>
+    </div>
+  </template>
+
+  <template id="film-card-template">
+    <div class="film-card">
+      <h4 class="film-title"></h4>
+      <p class="opening-crawl"></p>
+      <img class="film-poster" src="" alt="Film Poster">
+    </div>
+  </template>
+</body>
+</html>
